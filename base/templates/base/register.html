@@ -1,0 +1,20 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+
+<nav class="navbar" style="justify-content: center !important;">
+    <h1>Register</h1>
+    <!-- <h2><a href="{% url 'tasks' %}">&#8592; Back</a></h2> -->
+</nav>
+
+<div class="card-body">
+    <form class="edit-form" action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class="btn" type="submit" value="Register">
+    </form>
+    <p>Already have an account? <a style="text-decoration: none;" href="{url 'login.html'}"><strong>Login here</strong></a></p>
+</div>
+
+
+{% endblock content %}

@@ -1,0 +1,23 @@
+{% extends 'base/main.html' %}
+
+<style>
+    form {
+        margin: 10px !important;
+    }
+</style>
+
+{% block content %}
+
+<div class="navbar">
+    <a href="{% url 'tasks' %}">&#8592; Back</a>
+</div>
+
+<div class="card-body">
+    <form method="POST" class="edit-form">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <input class="btn" type="submit" value="submit">
+    </form>
+</div>
+
+{% endblock content %}
